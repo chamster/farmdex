@@ -1,0 +1,77 @@
+<h1>Listing animals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Eartag</th>
+      <th>Reg num</th>
+      <th>Sex</th>
+      <th>Date birth</th>
+      <th>Date acquired</th>
+      <th>Date removed</th>
+      <th>Status</th>
+      <th>Num horns</th>
+      <th>Sire</th>
+      <th>Dam</th>
+      <th>Source</th>
+      <th>Origin</th>
+      <th>Percent black</th>
+      <th>Percent lilac</th>
+      <th>For sale</th>
+      <th>For sale status</th>
+      <th>Quality</th>
+      <th>Sale price</th>
+      <th>To be culled</th>
+      <th>Comments</th>
+      <th>Comments web</th>
+      <th>Show on website</th>
+      <th>Core flock</th>
+      <th>Birth</th>
+      <th>Rejected at birth</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= animal.name %></td>
+        <td><%= animal.eartag %></td>
+        <td><%= animal.reg_num %></td>
+        <td><%= animal.sex_id %></td>
+        <td><%= animal.date_birth %></td>
+        <td><%= animal.date_acquired %></td>
+        <td><%= animal.date_removed %></td>
+        <td><%= animal.status_id %></td>
+        <td><%= animal.num_horns %></td>
+        <td><%= animal.sire_id %></td>
+        <td><%= animal.dam_id %></td>
+        <td><%= animal.source_id %></td>
+        <td><%= animal.origin_id %></td>
+        <td><%= animal.percent_black %></td>
+        <td><%= animal.percent_lilac %></td>
+        <td><%= animal.for_sale %></td>
+        <td><%= animal.for_sale_status_id %></td>
+        <td><%= animal.quality_id %></td>
+        <td><%= animal.sale_price %></td>
+        <td><%= animal.to_be_culled %></td>
+        <td><%= animal.comments %></td>
+        <td><%= animal.comments_web %></td>
+        <td><%= animal.show_on_website %></td>
+        <td><%= animal.core_flock %></td>
+        <td><%= animal.birth_id %></td>
+        <td><%= animal.rejected_at_birth %></td>
+        <td><%= link_to 'Show', animal %></td>
+        <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
+        <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Animal', new_animal_path %>

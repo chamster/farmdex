@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  eartag: MyText
+  reg_num: MyText
+  sex_id: 1
+  date_birth: MyText
+  date_acquired: MyText
+  date_removed: MyText
+  status_id: 1
+  num_horns: 1
+  sire_id: 1
+  dam_id: 1
+  source_id: 1
+  origin_id: 1
+  percent_black: 1
+  percent_lilac: 1
+  for_sale: 1
+  for_sale_status_id: 1
+  quality_id: 1
+  sale_price: 1
+  to_be_culled: 1
+  comments: MyText
+  comments_web: MyText
+  show_on_website: 1
+  core_flock: 1
+  birth_id: 1
+  rejected_at_birth: 1
+
+two:
+  name: MyString
+  eartag: MyText
+  reg_num: MyText
+  sex_id: 1
+  date_birth: MyText
+  date_acquired: MyText
+  date_removed: MyText
+  status_id: 1
+  num_horns: 1
+  sire_id: 1
+  dam_id: 1
+  source_id: 1
+  origin_id: 1
+  percent_black: 1
+  percent_lilac: 1
+  for_sale: 1
+  for_sale_status_id: 1
+  quality_id: 1
+  sale_price: 1
+  to_be_culled: 1
+  comments: MyText
+  comments_web: MyText
+  show_on_website: 1
+  core_flock: 1
+  birth_id: 1
+  rejected_at_birth: 1

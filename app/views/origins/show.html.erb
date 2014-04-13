@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @origin.origin %>
+</p>
+
+<p>
+  <strong>Flock name:</strong>
+  <%= @origin.flock_name %>
+</p>
+
+<p>
+  <strong>Sort order:</strong>
+  <%= @origin.sort_order %>
+</p>
+
+<%= link_to 'Edit', edit_origin_path(@origin) %> |
+<%= link_to 'Back', origins_path %>

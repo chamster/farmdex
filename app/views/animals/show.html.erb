@@ -1,0 +1,71 @@
+<%- model_class = Animal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @animal.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:eartag) %>:</strong></dt>
+  <dd><%= @animal.eartag %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reg_num) %>:</strong></dt>
+  <dd><%= @animal.reg_num %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sex_id) %>:</strong></dt>
+  <dd><%= @animal.sex.sex %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_birth) %>:</strong></dt>
+  <dd><%= @animal.date_birth %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_acquired) %>:</strong></dt>
+  <dd><%= @animal.date_acquired %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_removed) %>:</strong></dt>
+  <dd><%= @animal.date_removed %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status_id) %>:</strong></dt>
+  <dd><%= @animal.status.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:num_horns) %>:</strong></dt>
+  <dd><%= @animal.num_horns %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sire_id) %>:</strong></dt>
+  <dd><%= @animal.sire_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dam_id) %>:</strong></dt>
+  <dd><%= @animal.dam_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:source_id) %>:</strong></dt>
+  <dd><%= @animal.source_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:origin_id) %>:</strong></dt>
+  <dd><%= @animal.origin.origin %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:percent_black) %>:</strong></dt>
+  <dd><%= @animal.percent_black %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:percent_lilac) %>:</strong></dt>
+  <dd><%= @animal.percent_lilac %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:for_sale) %>:</strong></dt>
+  <dd><%= @animal.for_sale %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:for_sale_status_id) %>:</strong></dt>
+  <dd><%= @animal.for_sale_status_id %></dd>
+   <dt><strong><%= model_class.human_attribute_name(:quality_id) %>:</strong></dt>
+  <dd><%= @animal.quality.quality if @animal.quality %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sale_price) %>:</strong></dt>
+  <dd><%= @animal.sale_price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:to_be_culled) %>:</strong></dt>
+  <dd><%= @animal.to_be_culled %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
+  <dd><%= @animal.comments %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comments_web) %>:</strong></dt>
+  <dd><%= @animal.comments_web %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:show_on_website) %>:</strong></dt>
+  <dd><%= @animal.show_on_website %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:core_flock) %>:</strong></dt>
+  <dd><%= @animal.core_flock %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:birth_id) %>:</strong></dt>
+  <dd><%= @animal.birth_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rejected_at_birth) %>:</strong></dt>
+  <dd><%= @animal.rejected_at_birth %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              animals_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_animal_path(@animal), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              animal_path(@animal),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

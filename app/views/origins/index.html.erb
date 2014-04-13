@@ -1,0 +1,31 @@
+<h1>Listing origins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Origin</th>
+      <th>Flock name</th>
+      <th>Sort order</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @origins.each do |origin| %>
+      <tr>
+        <td><%= origin.origin %></td>
+        <td><%= origin.flock_name %></td>
+        <td><%= origin.sort_order %></td>
+        <td><%= link_to 'Show', origin %></td>
+        <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
+        <td><%= link_to 'Destroy', origin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Origin', new_origin_path %>

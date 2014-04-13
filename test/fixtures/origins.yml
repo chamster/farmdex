@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  origin: MyText
+  flock_name: MyText
+  sort_order: 1
+
+two:
+  origin: MyText
+  flock_name: MyText
+  sort_order: 1
