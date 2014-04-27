@@ -1,32 +1,50 @@
 <%= simple_form_for @animal do |f| %>
+<div class="container">
+<div class="row">
+<div class="col-md-4" style="float:left">
 <%= f.input :name %>
 <%= f.input :eartag %>
 <%= f.input :reg_num %>
 <%= f.association :sex, :collection => Sex.all, :label_method => :sex, :value_method => :id %>
-<%= f.input :date_birth %>
-<%= f.input :date_acquired %>
-<%= f.input :date_removed %>
+<%= f.input :date_birth, as: :bootstrap_datepicker %>
+<%= f.input :date_acquired, :as => :date, :start_year => Date.today.year - 12,
+:end_year => Date.today.year,
+:order => [ :day, :month, :year] %>
+<%= f.input :date_removed, :as => :date, :start_year => Date.today.year - 5,
+:end_year => Date.today.year,
+:order => [ :day, :month, :year] %>
 <%= f.association :status, :collection => Status.all, :label_method => :status, :value_method => :id %>
-<%= f.input :num_horns %>
+<%= f.input :num_horns, :collection => [2,4,6].to_a %>
 <%= f.input :sire_id, :collection => Animal.where(:sex_id => 1), :label_method => :name, :value_method => :id %>
 <%= f.input :dam_id, :collection => Animal.where(:sex_id => 2), :label_method => :name, :value_method => :id %>
 <%= f.association :source, :collection => Source.all(order: 'sort_order'), :label_method => :source, :value_method => :id %>
 <%= f.association :origin, :collection => Origin.all(order: 'sort_order'), :label_method => :origin, :value_method => :id %>
-<%= f.input :percent_black, :collection => (5..95) %>
-<%= f.input :percent_lilac, :collection => (5..95) %>
-<%= f.input :for_sale %>
+</div>
+<div class="col-md-8" style="float:right;">
+<%= f.input :percent_black, :collection => (5..95).step(5) %>
+<%= f.input :percent_lilac, :collection => (5..95).step(5) %>
 <%= f.association :for_sale_status, :collection => ForSaleStatus.all(order: 'sort_order'), :label_method => :for_sale_status, :value_method => :id %>
 <%= f.association :quality, :collection => Quality.all(order: 'sort_order'), :label_method => :quality, :value_method => :id %>
 <%= f.input :sale_price %>
-<%= f.input :to_be_culled %>
 <%= f.input :comments %>
 <%= f.input :comments_web %>
-<%= f.input :show_on_website %>
-<%= f.input :core_flock %>
-<%= f.input :birth_id %>
-<%= f.input :rejected_at_birth %>
-<%= f.button :submit %>
+<%= f.input :for_sale,   as: :radio_buttons %>
+<br><br>
+<%= f.input :show_on_website,   as: :radio_buttons %>
+<br><br>
+<%= f.input :to_be_culled,   as: :radio_buttons %>
+<br><br>
+<%= f.input :core_flock,   as: :radio_buttons %>
+<br><br>
+<%= f.input :rejected_at_birth,   as: :radio_buttons %>
+<br><br>
+</div>
+</div>
+</div>
+<div style="clear:both;margin-top:20px;text-align:center;">
+<%= f.button :submit, :class => 'btn btn-primary' %> or 
 <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                animals_path, :class => 'btn' %>
+                animals_path, :class => 'cancel' %>
+</div>
 
 <% end %>

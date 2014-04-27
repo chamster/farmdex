@@ -6,5 +6,7 @@ class Animal < ActiveRecord::Base
 	belongs_to :source, :class_name => Source, :foreign_key => :source_id
 	belongs_to :for_sale_status, :class_name => ForSaleStatus, :foreign_key => :for_sale_status_id
 
+	validates_presence_of :eartag
+
 
 end

@@ -5,12 +5,15 @@ ruby '2.0.0'
 gem 'rails', '4.0.3'
 
 gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-datepicker-rails'
 
 gem 'bcrypt-ruby', '3.1.2'
 
 gem 'faker', '1.1.2'
 
 gem 'simple_form'
+
+gem 'devise'
 
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'

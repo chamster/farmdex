@@ -1,4 +1,7 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
+@import "bootstrap-datepicker";
+
 
 /* mixins, variables, etc. */
 
@@ -17,7 +20,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 section {
@@ -44,8 +47,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 h2 {
@@ -242,4 +245,121 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+.navbar-inverse .navbar-inner {
+  background: #fff; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: none;
+  background: -moz-linear-gradient(top,  #fff 0%, #fff 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #fff 0%,#fff 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #fff 0%,#fff 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #fff 0%,#fff 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #fff 0%,#fff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fff',GradientType=0 ); /* IE6-8 */
+  border:none;
+}
+
+.navbar-fixed-top { position: absolute!important; }
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+color: #999;
+text-shadow: none;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a:hover {
+color: #333;
+text-shadow: none;
+}
+
+a {
+  color:blue;
+  text-decoration: underline;
+}
+
+.table-striped thead {
+  background-color:#ccc;
+}
+
+/* Edit Animal Form */
+
+.simple_form input, .simple_form select, .simple_form textarea {
+width: 300px;  
+}
+
+.simple_form label {
+float: left;
+text-align: right;
+margin: 2px 10px;
+width: 200px;
+font-weight:bold;
+}
+
+abbr[title], abbr[data-original-title] {
+cursor: auto;
+border-bottom: none;
+}
+
+.simple_form.edit_animal {
+  #animal_sex_id,
+  #animal_num_horns,
+  #animal_percent_black,
+  #animal_percent_lilac {
+    width: 50px;
+  }
+}
+
+.simple_form.edit_animal #animal_date_birth_1i,
+.simple_form.edit_animal #animal_date_acquired_1i,
+.simple_form.edit_animal #animal_date_removed_1i {
+width: 70px;
+}
+
+.simple_form.edit_animal #animal_date_birth_2i,
+.simple_form.edit_animal #animal_date_acquired_2i,
+.simple_form.edit_animal #animal_date_removed_2i {
+width: 120px;
+}
+
+.simple_form.edit_animal #animal_date_birth_3i,
+.simple_form.edit_animal #animal_date_acquired_3i,
+.simple_form.edit_animal #animal_date_removed_3i {
+width: 50px;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #cfc;
+ }
+
+ a.cancel, a.cancel:visited {
+  color:red;
+ }
+
+ a.cancel:hover {
+  color:red;
+  font-weight: bold;
+  }
+
+  .simple_form label.radio {
+    text-align: left;
+    line-height: 14px;
+    width:20px;
+  }
+
+  .simple_form input.radio_buttons {
+    width:20px;
+  }
+
+.simple_form .field_with_errors {
+padding: 2px;
+background-color: #ff6;
+display: table;
+border:1px solid red;
+}
+
+.alert {
+  background-color: #FEF595;
+  color:black;
 }

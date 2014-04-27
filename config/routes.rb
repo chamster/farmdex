@@ -1,4 +1,5 @@
 Breedware::Application.routes.draw do
+  devise_for :users
   resources :origins
 
   resources :sexes
