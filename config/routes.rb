@@ -1,4 +1,4 @@
-Breedware::Application.routes.draw do
+Farmdex::Application.routes.draw do
   devise_for :users
   resources :origins
 

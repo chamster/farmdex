@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Breedware::Application.load_tasks
+Farmdex::Application.load_tasks

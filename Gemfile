@@ -43,6 +43,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rename'
+
 #  gem 'twitter-bootstrap-rails'
 
 # help for bootstrap
