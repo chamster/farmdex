@@ -1,12 +1,19 @@
 <%= simple_form_for @animal do |f| %>
 <div class="container">
+	<div style="clear:both;margin-bottom:20px;text-align:left;">
+<%= f.button :submit, :class => 'btn btn-primary' %> or 
+<%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                animals_path, :class => 'cancel' %>
+</div>
 <div class="row">
 <div class="col-md-4" style="float:left">
 <%= f.input :name %>
 <%= f.input :eartag %>
 <%= f.input :reg_num %>
 <%= f.association :sex, :collection => Sex.all, :label_method => :sex, :value_method => :id %>
-<%= f.input :date_birth, as: :bootstrap_datepicker %>
+<%= f.input :date_birth, :as => :date, :start_year => Date.today.year - 12,
+:end_year => Date.today.year,
+:order => [ :day, :month, :year] %>
 <%= f.input :date_acquired, :as => :date, :start_year => Date.today.year - 12,
 :end_year => Date.today.year,
 :order => [ :day, :month, :year] %>
@@ -41,7 +48,7 @@
 </div>
 </div>
 </div>
-<div style="clear:both;margin-top:20px;text-align:center;">
+<div style="clear:both;margin-top:20px;text-align:left;">
 <%= f.button :submit, :class => 'btn btn-primary' %> or 
 <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 animals_path, :class => 'cancel' %>
