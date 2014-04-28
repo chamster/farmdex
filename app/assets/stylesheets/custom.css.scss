@@ -376,3 +376,11 @@ select:focus
  {
   background-color:#ff9;
 }
+
+a.btn {
+  text-decoration:none;
+}
+
+a.btn-danger, a.btn-danger:visited {
+  color:white;
+}
